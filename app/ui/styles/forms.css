@@ -1,0 +1,69 @@
+div[data-testid="stTextInput"]{
+
+width:650px;
+
+margin:auto;
+
+}
+
+div[data-testid="stButton"]{
+
+display:flex;
+
+justify-content:center;
+
+margin-top:20px;
+
+}
+
+div[data-testid="stButton"] button{
+
+background:#4F9DFF;
+
+color:white;
+
+border:none;
+
+border-radius:12px;
+
+padding:14px 30px;
+
+font-size:17px;
+
+font-weight:600;
+
+transition:.25s;
+
+}
+
+div[data-testid="stButton"] button:hover{
+
+background:#63AAFF;
+
+transform:translateY(-2px);
+
+}
+
+div[data-testid="stTextInput"] input{
+
+background:#171D29;
+
+border:1px solid #293347;
+
+border-radius:12px;
+
+padding:18px;
+
+font-size:18px;
+
+color:white;
+
+}
+
+div[data-testid="stTextInput"] input:focus{
+
+border:1px solid #4F9DFF;
+
+box-shadow:0 0 0 1px #4F9DFF;
+
+}

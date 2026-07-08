@@ -1,13 +1,9 @@
-import streamlit as st
+from app.ui.landing_page import render_landing_page
 
-st.set_page_config(
-    page_title="TripPilot AI",
-    page_icon="✈️",
-    layout="wide"
-)
 
-st.title("✈️ TripPilot AI")
+def main():
+    render_landing_page()
 
-st.subheader("A Multi-Agent Travel Intelligence Assistant")
 
-st.success("Project initialized successfully!")
+if __name__ == "__main__":
+    main()

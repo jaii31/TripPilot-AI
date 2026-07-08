@@ -1,0 +1,28 @@
+html,
+body,
+[data-testid="stAppViewContainer"]{
+
+background:#0B0F19;
+
+color:white;
+
+font-family:Inter,sans-serif;
+
+}
+
+header,
+footer,
+#MainMenu{
+
+visibility:hidden;
+
+}
+
+.block-container{
+    padding:0rem 4rem 0rem 4rem !important;
+    max-width:100% !important;
+}
+
+section.main > div{
+    padding-top:0rem;
+}
