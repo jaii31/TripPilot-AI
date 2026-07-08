@@ -1,0 +1,48 @@
+{
+    "Japan": {
+        "currency": "Japanese Yen (JPY)",
+        "language": "Japanese",
+        "timezone": "UTC +9",
+        "best_season": "March - May, October - November",
+
+        "cities": [
+            "Tokyo",
+            "Kyoto",
+            "Osaka",
+            "Nara",
+            "Hakone",
+            "Sapporo"
+        ],
+
+        "attractions": [
+            "Mount Fuji",
+            "Fushimi Inari Shrine",
+            "Shibuya Crossing",
+            "Tokyo Disneyland",
+            "Arashiyama Bamboo Forest",
+            "Osaka Castle",
+            "Nara Deer Park",
+            "Universal Studios Japan"
+        ]
+    },
+
+    "France": {
+        "currency": "Euro (EUR)",
+        "language": "French",
+        "timezone": "UTC +1",
+        "best_season": "April - June, September",
+        "peak_season": "Summer",
+        "visa": "Schengen Visa",
+        "emergency": "112"
+    },
+
+    "India": {
+        "currency": "Indian Rupee (INR)",
+        "language": "Hindi, English",
+        "timezone": "UTC +5:30",
+        "best_season": "October - March",
+        "peak_season": "Winter",
+        "visa": "Depends on nationality",
+        "emergency": "112"
+    }
+}

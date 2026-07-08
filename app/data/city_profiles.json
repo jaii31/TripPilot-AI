@@ -1,0 +1,47 @@
+{
+    "Tokyo": {
+        "must_visit": [
+            "Shibuya Crossing",
+            "Tokyo Tower",
+            "Senso-ji Temple"
+        ],
+        "food": [
+            "Sushi",
+            "Ramen",
+            "Tempura"
+        ],
+        "shopping": [
+            "Ginza",
+            "Akihabara"
+        ],
+        "hidden_gems": [
+            "Yanaka",
+            "Shimokitazawa"
+        ],
+        "family": [
+            "Tokyo Disneyland",
+            "Ueno Zoo"
+        ]
+    },
+
+    "Kyoto": {
+        "must_visit": [
+            "Fushimi Inari Shrine",
+            "Kinkaku-ji",
+            "Arashiyama"
+        ],
+        "food": [
+            "Kaiseki",
+            "Matcha"
+        ],
+        "shopping": [
+            "Nishiki Market"
+        ],
+        "hidden_gems": [
+            "Philosopher's Path"
+        ],
+        "family": [
+            "Kyoto Railway Museum"
+        ]
+    }
+}

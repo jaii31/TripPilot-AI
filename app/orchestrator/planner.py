@@ -1,4 +1,5 @@
 import streamlit as st
+from datetime import date, timedelta
 
 from app.memory.session_memory import mission
 
@@ -26,15 +27,15 @@ def destination_step():
 
     if st.button("Next"):
 
-            mission.update(
-               "destination",
-                destination,
-            )
-            
-            mission.execute_destination_agent()
+        mission.update(
+            "destination",
+            destination
+        )
 
-            st.session_state.step = 1
-            st.rerun()
+        mission.execute_destination_agent()
+
+        st.session_state.step = 1
+        st.rerun()
 
 
 def dates_step():
@@ -42,15 +43,20 @@ def dates_step():
     st.subheader("When are you travelling?")
 
     dates = st.date_input(
-        "Travel Dates"
+        "Travel Dates",
+        value=(
+            date.today(),
+            date.today() + timedelta(days=6)
+        )
     )
 
     if st.button("Next"):
 
         mission.update(
             "dates",
-            dates,
+            dates
         )
+
         st.session_state.step = 2
         st.rerun()
 
@@ -74,7 +80,13 @@ def travel_style_step():
 
         mission.update(
             "travel_style",
-            style,
+            style
         )
+
+        mission.execute_explorer_agent()
+
+        st.write(mission.summary())
+
+        mission.execute_strategist_agent()
 
         st.success("Planner skeleton completed.")
