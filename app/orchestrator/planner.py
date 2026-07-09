@@ -19,6 +19,9 @@ def render_current_step(step):
     elif step == 3:
         budget_step()
 
+    elif step == 4:
+        transportation_step()
+
 
 def destination_step():
 
@@ -218,6 +221,18 @@ def budget_step():
 
         mission.execute_budget_agent()
 
-        st.success(
-            "Budget plan generated."
-        )
+        mission.execute_transport_agent()
+
+        st.session_state.step = 4
+
+        st.rerun()
+
+def transportation_step():
+
+    st.subheader(
+        "Your transportation plan"
+    )
+
+    st.success(
+        "Transportation intelligence generated."
+    )

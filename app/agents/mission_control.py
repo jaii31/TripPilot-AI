@@ -2,6 +2,7 @@ from app.agents.destination_agent import DestinationAgent
 from app.agents.explorer import ExplorerAgent
 from app.agents.strategist import Strategist
 from app.agents.budget_agent import BudgetAgent
+from app.agents.transport_agent import TransportAgent
 
 
 class MissionControl:
@@ -17,6 +18,8 @@ class MissionControl:
         self.strategist = Strategist()
 
         self.budget_agent = BudgetAgent()
+
+        self.transport_agent = TransportAgent()
 
     def update(self, key, value):
 
@@ -84,6 +87,17 @@ class MissionControl:
 
         result = (
             self.budget_agent
+            .execute(self)
+        )
+
+        self.state.update(result)
+
+        return result
+    
+    def execute_transport_agent(self):
+
+        result = (
+            self.transport_agent
             .execute(self)
         )
 
