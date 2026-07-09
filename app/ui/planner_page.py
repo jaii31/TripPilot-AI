@@ -4,9 +4,12 @@ from app.memory.session_memory import mission
 from app.ui.sections.trip_strategy import render_trip_strategy
 from app.ui.sections.city_explorer import render_city_explorer
 from app.ui.budget_result import render_budget_result
-from app.ui.transport_result import (
-    render_transport_result
-)
+from app.ui.transport_result import (render_transport_result)
+from app.ui.accommodation_result import (render_accommodation_result)
+from app.ui.activity_plan import render_activity_plan
+from app.ui.weather_plan import render_weather_plan
+from app.ui.packing_plan import (render_packing_plan)
+
 
 def render_planner_page():
 
@@ -58,3 +61,11 @@ def render_planner_page():
         render_budget_result(mission)
 
         render_transport_result(mission)
+
+        render_accommodation_result(mission)
+
+        render_activity_plan(mission)
+
+        render_weather_plan(mission)
+
+        render_packing_plan(mission)

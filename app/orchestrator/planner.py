@@ -1,8 +1,7 @@
 import streamlit as st
-
 from datetime import date, timedelta
-
 from app.memory.session_memory import mission
+from app.ui.trip_summary import render_trip_summary
 
 
 def render_current_step(step):
@@ -21,6 +20,21 @@ def render_current_step(step):
 
     elif step == 4:
         transportation_step()
+
+    elif step == 5:
+        accommodation_step()
+
+    elif step == 6:
+        activities_step()
+
+    elif step == 7:
+        weather_step()
+
+    elif step == 8:
+        packing_step()
+
+    elif step == 9:
+        render_trip_summary()
 
 
 def destination_step():
@@ -234,5 +248,106 @@ def transportation_step():
     )
 
     st.success(
-        "Transportation intelligence generated."
+        "Transportation intelligence "
+        "generated."
     )
+
+    if st.button(
+        "Continue to Accommodation"
+    ):
+
+        mission.execute_accommodation_agent()
+
+        st.session_state.step = 5
+
+        st.rerun()
+
+def accommodation_step():
+
+    st.subheader("Your accommodation plan")
+
+    st.success(
+        "Accommodation intelligence"
+        "generated successfully"
+    )
+
+    if st.button("Continue to Activities"):
+        
+        mission.execute_activity_agent()
+
+        st.session_state.step = 6
+
+        st.rerun()
+
+def activities_step():
+
+    st.subheader("Your activity plan")
+
+    if "activities" not in mission.summary():
+
+        mission.execute_activity_agent()
+
+    st.success(
+        "Personalized activities" "generated successfully."
+    )
+
+    if st.button("Continue to Weather"):
+
+        st.session_state.step = 7
+        st.rerun()
+
+def weather_step():
+
+    st.subheader(
+        "Weather intelligence"
+    )
+
+    if "weather" not in mission.summary():
+
+        mission.execute_forecaster()
+
+    st.success(
+        "Weather intelligence generated "
+        "successfully."
+    )
+
+    if st.button(
+        "Continue to Packing"
+    ):
+
+        st.session_state.step = 8
+
+        st.rerun()
+
+def packing_step():
+
+    st.subheader(
+        "Your personalized packing plan"
+    )
+
+    if "packing" not in mission.summary():
+
+        mission.execute_packwise()
+
+    st.success(
+        "Packwise generated your "
+        "personalized packing checklist."
+    )
+
+    if st.button(
+        "Continue to Trip Summary"
+    ):
+
+        st.session_state.step = 9
+
+        st.rerun()
+    
+    if st.button(
+        "Complete My Journey",
+        type="primary",
+        use_container_width=True
+    ):
+
+        st.session_state.step = 9
+
+        st.rerun()

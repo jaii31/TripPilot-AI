@@ -3,7 +3,10 @@ from app.agents.explorer import ExplorerAgent
 from app.agents.strategist import Strategist
 from app.agents.budget_agent import BudgetAgent
 from app.agents.transport_agent import TransportAgent
-
+from app.agents.accommodation_agent import AccommodationAgent
+from app.agents.activity_agent import ActivityAgent
+from app.agents.forecaster import Forecaster
+from app.agents.packwise import Packwise
 
 class MissionControl:
 
@@ -20,6 +23,14 @@ class MissionControl:
         self.budget_agent = BudgetAgent()
 
         self.transport_agent = TransportAgent()
+
+        self.accommodation_agent = AccommodationAgent()
+
+        self.activity_agent = ActivityAgent()
+
+        self.forecaster = Forecaster()
+
+        self.packwise = Packwise()
 
     def update(self, key, value):
 
@@ -100,6 +111,38 @@ class MissionControl:
             self.transport_agent
             .execute(self)
         )
+
+        self.state.update(result)
+
+        return result
+    
+    def execute_accommodation_agent(self):
+
+        result = self.accommodation_agent.execute(self)
+
+        self.state.update(result)
+
+        return result
+    
+    def execute_activity_agent(self):
+
+        result = self.activity_agent.execute(self)
+
+        self.state.update(result)
+
+        return result
+    
+    def execute_forecaster(self):
+
+        result = self.forecaster.execute(self)
+
+        self.state.update(result)
+
+        return result
+    
+    def execute_packwise(self):
+
+        result = self.packwise.execute(self)
 
         self.state.update(result)
 
