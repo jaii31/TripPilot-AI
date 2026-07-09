@@ -1,6 +1,8 @@
 import streamlit as st
 from app.orchestrator.planner import render_current_step
 from app.memory.session_memory import mission
+from app.ui.sections.trip_strategy import render_trip_strategy
+from app.ui.sections.city_explorer import render_city_explorer
 
 
 def render_planner_page():
@@ -45,6 +47,7 @@ def render_planner_page():
 
     st.divider()
 
-    st.subheader("Mission State")
+    if mission.get("strategy"):
+        render_trip_strategy(mission)
 
-    st.json(mission.summary())
+        render_city_explorer(mission)

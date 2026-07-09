@@ -43,5 +43,55 @@
         "family": [
             "Kyoto Railway Museum"
         ]
+    },
+
+    "Osaka": {
+        "must_visit": [
+            "Osaka Castle",
+            "Dotonbori",
+            "Universal Studios Japan"
+        ],
+        "food": [
+            "Takoyaki",
+            "Okonomiyaki",
+            "Kushikatsu"
+        ],
+        "shopping": [
+            "Shinsaibashi",
+            "Namba"
+        ],
+        "hidden_gems": [
+            "Hozenji Yokocho",
+            "Nakazakicho"
+        ],
+        "family": [
+            "Osaka Aquarium Kaiyukan",
+            "Universal Studios Japan"
+        ]
+    },
+
+    "Nara": {
+        "must_visit": [
+            "Nara Park",
+            "Todai-ji Temple",
+            "Kasuga Taisha"
+        ],
+        "food": [
+            "Kakinoha Sushi",
+            "Miwa Somen",
+            "Nakatanidou Mochi"
+        ],
+        "shopping": [
+            "Higashimuki Shopping Street",
+            "Naramachi"
+        ],
+        "hidden_gems": [
+            "Isuien Garden",
+            "Yoshikien Garden"
+        ],
+        "family": [
+            "Nara Park Deer Experience",
+            "Nara National Museum"
+        ]
     }
 }

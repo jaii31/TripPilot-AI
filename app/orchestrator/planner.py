@@ -83,10 +83,10 @@ def travel_style_step():
             style
         )
 
+        # Create initial city recommendations
         mission.execute_explorer_agent()
 
-        st.write(mission.summary())
-
+        # Creates the final route
         mission.execute_strategist_agent()
 
-        st.success("Planner skeleton completed.")
+        st.success("Trip intelligence generated successfully.")
