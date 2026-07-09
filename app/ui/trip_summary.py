@@ -485,4 +485,19 @@ def render_trip_summary():
         "your personalized journey."
     )
 
+    st.divider()
+
     render_trip_copilot()
+
+    if st.button(
+        "✈️ Plan Another Journey",
+        use_container_width=True
+    ):
+        mission.state.clear()
+
+        for key in list(st.session_state.keys()):
+            del st.session_state[key]
+
+        st.session_state.step = 0
+
+        st.rerun()
