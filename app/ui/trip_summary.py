@@ -2,6 +2,7 @@ import json
 import streamlit as st
 
 from app.memory.session_memory import mission
+from app.ui.trip_copilot import render_trip_copilot
 
 
 def render_trip_summary():
@@ -483,3 +484,5 @@ def render_trip_summary():
         "TripPilot AI has completed "
         "your personalized journey."
     )
+
+    render_trip_copilot()
