@@ -3,7 +3,7 @@ from app.orchestrator.planner import render_current_step
 from app.memory.session_memory import mission
 from app.ui.sections.trip_strategy import render_trip_strategy
 from app.ui.sections.city_explorer import render_city_explorer
-
+from app.ui.budget_result import render_budget_result
 
 def render_planner_page():
 
@@ -51,3 +51,5 @@ def render_planner_page():
         render_trip_strategy(mission)
 
         render_city_explorer(mission)
+
+        render_budget_result(mission)
